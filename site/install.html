@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install · binboat</title>
 <meta name="description" content="Install binboat on an Ubuntu VPS, set it up in the browser, update it and fix common problems.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html">binboat</a>
-  <nav><a href="index.html">Overview</a><a href="install.html" aria-current="page">Install</a><a href="apps.html">Hosting an app</a><a href="api.html">Status API</a><a href="internals.html">How it works</a><a href="https://github.com/sumitwaani2/binboat" rel="noopener">GitHub</a></nav>
+  <a class="brand" href="index.html"><img src="logo.svg" alt="" width="26" height="26">binboat</a>
+  <nav><a href="index.html">Overview</a><a href="install.html" aria-current="page">Install</a><a href="apps.html">Hosting an app</a><a href="api.html">Status API</a><a href="internals.html">How it works</a><a href="https://github.com/im-anuvaad/binboat" rel="noopener">GitHub</a></nav>
 </header>
 <main>
 <h1 id="install-and-set-up">Install and set up</h1>
@@ -51,7 +52,7 @@
 <li>Optional: a GitHub fine-grained token with <em>Contents: Read-only</em> on your app repos (needed for private repos), and an R2 bucket with an R2 API token (<em>Object Read &amp; Write</em> on that bucket).</li>
 </ul>
 <h2 id="install">Install</h2>
-<pre><code class="language-bash">curl -fsSL https://github.com/sumitwaani2/binboat/releases/latest/download/install.sh | sudo bash
+<pre><code class="language-bash">curl -fsSL https://github.com/im-anuvaad/binboat/releases/latest/download/install.sh | sudo bash
 </code></pre>
 <p>It asks nothing, takes a few seconds and ends with the address to open (<code>https://&lt;server IP&gt;</code>) and a <strong>one-time password</strong>. You can close SSH now.</p>
 <h2 id="first-steps-in-the-browser">First steps in the browser</h2>
@@ -116,6 +117,6 @@
 </tr>
 </tbody>
 </table></div></main>
-<footer>binboat is licensed under <a href="https://github.com/sumitwaani2/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/sumitwaani2/binboat" rel="noopener">Source on GitHub</a></footer>
+<footer>binboat is licensed under <a href="https://github.com/im-anuvaad/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/im-anuvaad/binboat" rel="noopener">Source on GitHub</a></footer>
 </body>
 </html>
