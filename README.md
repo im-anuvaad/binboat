@@ -9,7 +9,9 @@ A tiny, self-contained PaaS for hosting small server-rendered web apps (**Go, Zi
 One binary. No Docker, no extra reverse proxy. SSH in once and run one command; it prints a one-time password, and everything else happens in a web dashboard.
 
 ```
-Cloudflare (proxied, Full strict) ──HTTPS──► binboat (TLS + routing + dashboard + deploys + backups) ──► your apps on 127.0.0.1
+Cloudflare (proxied, Full strict) ──HTTPS──► binboat ──► your apps on 127.0.0.1
+                                             TLS, routing, dashboard,
+                                             deploys, backups
 ```
 
 - **Deploy GitHub releases with a click.** Each app's own GitHub Actions workflow tests and builds it when you push a tag; binboat lists the releases and **Deploy** downloads, verifies and runs the one you pick. The server never compiles anything. Rollback is one click too.
@@ -20,6 +22,8 @@ Cloudflare (proxied, Full strict) ──HTTPS──► binboat (TLS + routing + 
 - **Read-only status API** for scripts and AI agents ("is my blog up?"), with one rotatable token: [docs/api.md](docs/api.md).
 
 Scope: 1 server (Ubuntu 24.04+, 1 GB RAM is enough), 1 user, about 5 apps. Status: **v1.0.0**.
+
+![The binboat dashboard: an app's status, the Deploy menu with its GitHub releases, and CPU, memory, request and response-time charts](docs/assets/dashboard.png)
 
 ## Before you start
 

@@ -17,7 +17,9 @@
 <h1 id="binboat">binboat</h1>
 <p>A tiny, self-contained PaaS for hosting small server-rendered web apps (<strong>Go, Zig or C</strong> + SQLite) on a single VPS behind Cloudflare.</p>
 <p>One binary. No Docker, no extra reverse proxy. SSH in once and run one command; it prints a one-time password, and everything else happens in a web dashboard.</p>
-<pre class="flow-wide"><code>Cloudflare (proxied, Full strict) ──HTTPS──► binboat (TLS + routing + dashboard + deploys + backups) ──► your apps on 127.0.0.1
+<pre class="flow-wide"><code>Cloudflare (proxied, Full strict) ──HTTPS──► binboat ──► your apps on 127.0.0.1
+                                             TLS, routing, dashboard,
+                                             deploys, backups
 </code></pre>
 <pre class="flow-narrow"><code>Cloudflare (proxied, Full strict)
    │ HTTPS
@@ -38,6 +40,7 @@ your apps on 127.0.0.1
 <li><strong>Read-only status API</strong> for scripts and AI agents ("is my blog up?"), with one rotatable token: <a href="api.html">Status API</a>.</li>
 </ul>
 <p>Scope: 1 server (Ubuntu 24.04+, 1 GB RAM is enough), 1 user, about 5 apps. Status: <strong>v1.0.0</strong>.</p>
+<figure class="shot"><img src="dashboard.png" width="1200" height="1081" alt="The binboat dashboard: an app's status, the Deploy menu with its GitHub releases, and CPU, memory, request and response-time charts"><figcaption>An app in the dashboard: status, deploy, usage.</figcaption></figure>
 <h2 id="quick-start">Quick start</h2>
 <p>On a fresh Ubuntu 24.04+ VPS with your domains on Cloudflare:</p>
 <pre><code class="language-bash">curl -fsSL https://github.com/im-anuvaad/binboat/releases/latest/download/install.sh | sudo bash
