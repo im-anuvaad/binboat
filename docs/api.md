@@ -36,7 +36,7 @@ For an agent, `status` answers almost everything in one call; use `apps/{name}` 
 ```json
 {
   "ok": false,
-  "binboat_version": "v1.1.0",
+  "binboat_version": "v1.0.0",
   "time": "2026-10-12T17:06:27Z",
   "host": {
     "hostname": "vps-1",
@@ -61,7 +61,7 @@ For an agent, `status` answers almost everything in one call; use `apps/{name}` 
       "healthy": true,
       "domain": "blog.example.com",
       "url": "https://blog.example.com/",
-      "release": "v1.4.0",
+      "release": "v1.0.0",
       "deploying": false,
       "needs_restart": false,
       "memory_bytes": 31457280,
@@ -124,12 +124,12 @@ Everything above, plus:
     "disk_write_bytes_per_second": 0
   },
   "last_deployment": {
-    "id": 12, "kind": "deploy", "status": "succeeded", "release": "v2.0.1",
+    "id": 12, "kind": "deploy", "status": "succeeded", "release": "v1.0.0",
     "started_at": "2026-10-11T09:12:00Z", "finished_at": "2026-10-11T09:12:04Z", "error": ""
   },
   "last_backup": {
     "id": 88, "kind": "scheduled", "status": "ok", "created_at": "2026-10-12T15:00:04Z",
-    "size_bytes": 482133, "in_bucket": true, "on_server": true, "release": "v2.0.1", "error": ""
+    "size_bytes": 482133, "in_bucket": true, "on_server": true, "release": "v1.0.0", "error": ""
   },
   "domain_status": { "dns": "ok", "certificate_valid_until": "2041-10-01T00:00:00Z", "error": "" },
   "warnings": ["crashed and not being restarted: exit status 1"]

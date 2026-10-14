@@ -161,7 +161,7 @@ jobs:
 
 The workflow runs `TEST`, builds both architectures, packages `app-linux-amd64.tar.gz` and `app-linux-arm64.tar.gz`, writes `checksums.txt`, starts the amd64 package exactly as binboat would and waits for `health_path`, and only then publishes the release. Nothing is deployed yet: the release appears in the app's **Deploy** menu in binboat, and you pick when.
 
-- Tags must match `v*` and use only letters, digits, `.`, `_` and `-` (e.g. `v1.4.0`, `v1.4.0-rc1`); the tag becomes `BINBOAT_RELEASE`.
+- Tags must match `v*` and use only letters, digits, `.`, `_` and `-` (e.g. `v1.0.0`, `v1.0.0-rc1`); the tag becomes `BINBOAT_RELEASE`.
 - Push the workflow file in a commit **before** the first tag: a tag pushed together with the repository's first commit does not start the workflow.
 - Builds run on GitHub's runners, never on your server. Private repos work: binboat downloads assets with the GitHub token from its settings (*Contents: Read-only*).
 - The tarball is unpacked read-only (owned by root). Anything the app writes goes in `$DATA_DIR` or `$TMPDIR`.
@@ -320,7 +320,7 @@ It behaves like the workflow in §2.2: tests first, both architectures, checksum
 | `TMPDIR` | `/var/lib/binboat/apps/blog/tmp` | Scratch space that may be wiped on every deploy. |
 | `BINBOAT_APP` | `blog` | The app's name (from the repository name). |
 | `BINBOAT_DOMAIN` | `blog.example.com` | The public domain. |
-| `BINBOAT_RELEASE` | `v1.4.0` | The deployed release (its tag). |
+| `BINBOAT_RELEASE` | `v1.0.0` | The deployed release (its tag). |
 | `BINBOAT_CONTRACT` | `3` | The contract version. |
 
 binboat also sets `PATH` and `LANG`, and adds your own env vars from the dashboard; nothing else is inherited (no `HOME`). The one extra: `GOMEMLIMIT` is set to 90% of the memory limit unless you define it yourself (§2.4); other languages ignore it. Names starting with `BINBOAT_`, and the names in the table above, are reserved. Changing env vars requires a **Restart**, not a new release.
