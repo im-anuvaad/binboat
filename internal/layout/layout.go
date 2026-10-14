@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/sumitwaani2/binboat/internal/users"
+	"github.com/im-anuvaad/binboat/internal/users"
 )
 
 // Fixed locations. binboat has no config file (docs/architecture.md).
@@ -21,6 +21,10 @@ const (
 // Layout resolves paths under the data root (DataRoot).
 type Layout struct {
 	Root string
+	// UID and GID own the directories that are not the app user's
+	// (EnsureApp). The zero value is root, as in production; tests that
+	// run unprivileged set their own.
+	UID, GID int
 }
 
 // Default is the layout under DataRoot.
@@ -109,7 +113,7 @@ func (l Layout) EnsureApp(app string, u users.User) error {
 		if err := os.MkdirAll(d.path, d.mode); err != nil {
 			return fmt.Errorf("layout: create %s: %w", d.path, err)
 		}
-		uid, gid := 0, 0
+		uid, gid := l.UID, l.GID
 		if d.owned {
 			uid, gid = int(u.UID), int(u.GID)
 		}

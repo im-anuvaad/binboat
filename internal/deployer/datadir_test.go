@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/logs"
-	"github.com/sumitwaani2/binboat/internal/store"
-	"github.com/sumitwaani2/binboat/internal/users"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/logs"
+	"github.com/im-anuvaad/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/users"
 )
 
 // Everything in DATA_DIR survives redeploys, not only the SQLite files that
@@ -26,7 +26,9 @@ func TestDataDirSurvivesRedeploys(t *testing.T) {
 		t.Fatal(err)
 	}
 	t.Cleanup(func() { db.Close() })
-	l := layout.Layout{Root: root}
+	// CI runs unprivileged: binboat's own directories belong to the test
+	// user instead of root.
+	l := layout.Layout{Root: root, UID: os.Getuid(), GID: os.Getgid()}
 	d, err := New(ctx, Deps{Store: db, Layout: l})
 	if err != nil {
 		t.Fatal(err)
