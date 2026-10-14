@@ -78,6 +78,7 @@ Run the install command again. It installs the latest binboat, keeps all apps an
 | Cloudflare error 525 / 520 | Origin pulls were changed in Cloudflare; binboat repairs them on the next sync (**Sync now**) and waits a few minutes before requiring them again |
 | `has a CNAME record` | Delete the CNAME in Cloudflare; binboat creates the A record |
 | Nothing answers at all | Re-run the install command and use the address and one-time password it prints |
+| Install stops with `port 443 is already in use by …` | Another web server (nginx, Caddy, Apache, another panel) holds port 443; binboat serves HTTPS itself. Stop and disable it, then run the install command again |
 
 ## License and maintenance
 

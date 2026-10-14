@@ -115,6 +115,10 @@
 <td>Nothing answers at all</td>
 <td>Re-run the install command and use the address and one-time password it prints</td>
 </tr>
+<tr>
+<td>Install stops with <code>port 443 is already in use by …</code></td>
+<td>Another web server (nginx, Caddy, Apache, another panel) holds port 443; binboat serves HTTPS itself. Stop and disable it, then run the install command again</td>
+</tr>
 </tbody>
 </table></div></main>
 <footer>binboat is licensed under <a href="https://github.com/im-anuvaad/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/im-anuvaad/binboat" rel="noopener">Source on GitHub</a></footer>
