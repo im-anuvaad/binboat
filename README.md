@@ -1,4 +1,8 @@
-# binboat
+<p align="center"><img src="docs/assets/logo.svg" alt="binboat logo" width="96" height="96"></p>
+
+<h1 align="center">binboat</h1>
+
+<p align="center"><a href="https://binboat.pages.dev">Documentation</a> · <a href="https://github.com/im-anuvaad/binboat/releases/latest">Latest release</a></p>
 
 A tiny, self-contained PaaS for hosting small server-rendered web apps (**Go, Zig or C** + SQLite) on a single VPS behind Cloudflare.
 
@@ -35,7 +39,7 @@ Scope: 1 server (Ubuntu 24.04+, 1 GB RAM is enough), 1 user, about 5 apps. Statu
 ## Install
 
 ```bash
-curl -fsSL https://github.com/sumitwaani2/binboat/releases/latest/download/install.sh | sudo bash
+curl -fsSL https://github.com/im-anuvaad/binboat/releases/latest/download/install.sh | sudo bash
 ```
 
 It asks nothing, takes a few seconds and ends with the address to open (`https://<server IP>`) and a **one-time password**. You can close SSH now.
