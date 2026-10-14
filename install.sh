@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # binboat installer: the only command you ever run over SSH.
 #
-#   curl -fsSL https://github.com/sumitwaani2/binboat/releases/latest/download/install.sh | sudo bash
+#   curl -fsSL https://github.com/im-anuvaad/binboat/releases/latest/download/install.sh | sudo bash
 #
 # It asks nothing and installs no system packages; nothing is ever built on
 # the server (docs/architecture.md §4, §7):
@@ -19,7 +19,7 @@
 #   BINBOAT_VERSION=v1.0.0   install that release instead of the latest
 set -euo pipefail
 
-REPO="sumitwaani2/binboat"
+REPO="im-anuvaad/binboat"
 INSTALL_PATH="/usr/local/bin/binboat"
 MIN_UBUNTU="24.04"
 

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/backup"
-	"github.com/sumitwaani2/binboat/internal/s3"
+	"github.com/im-anuvaad/binboat/internal/backup"
+	"github.com/im-anuvaad/binboat/internal/s3"
 )
 
 // policyText describes the backup schedule for pages.

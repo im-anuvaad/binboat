@@ -16,11 +16,11 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/sumitwaani2/binboat/internal/app"
-	"github.com/sumitwaani2/binboat/internal/cgroup"
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/logs"
-	"github.com/sumitwaani2/binboat/internal/users"
+	"github.com/im-anuvaad/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/cgroup"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/logs"
+	"github.com/im-anuvaad/binboat/internal/users"
 )
 
 // State of an app.

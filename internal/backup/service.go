@@ -14,12 +14,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/buildinfo"
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/logs"
-	"github.com/sumitwaani2/binboat/internal/s3"
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/buildinfo"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/logs"
+	"github.com/im-anuvaad/binboat/internal/s3"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 // Kinds.

@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 // One-time password (docs/architecture.md). The installer

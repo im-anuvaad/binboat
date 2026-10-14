@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sumitwaani2/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/app"
 )
 
 func TestParse(t *testing.T) {

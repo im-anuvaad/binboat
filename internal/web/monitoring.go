@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/hostinfo"
-	"github.com/sumitwaani2/binboat/internal/metrics"
+	"github.com/im-anuvaad/binboat/internal/hostinfo"
+	"github.com/im-anuvaad/binboat/internal/metrics"
 )
 
 // Thresholds for dashboard warnings.

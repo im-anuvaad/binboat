@@ -10,13 +10,13 @@ import (
 	"io"
 	"os"
 
-	"github.com/sumitwaani2/binboat/internal/buildinfo"
+	"github.com/im-anuvaad/binboat/internal/buildinfo"
 )
 
 const usage = `binboat - minimal PaaS for small SQLite web apps (Go, Zig or C)
 
 Install or update it with:
-  curl -fsSL https://github.com/sumitwaani2/binboat/releases/latest/download/install.sh | sudo bash
+  curl -fsSL https://github.com/im-anuvaad/binboat/releases/latest/download/install.sh | sudo bash
 and manage it in the dashboard. These commands are used by the installer
 and systemd:
 

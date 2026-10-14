@@ -13,12 +13,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/auth"
-	"github.com/sumitwaani2/binboat/internal/backup"
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/hostinfo"
-	"github.com/sumitwaani2/binboat/internal/metrics"
-	"github.com/sumitwaani2/binboat/internal/supervisor"
+	"github.com/im-anuvaad/binboat/internal/auth"
+	"github.com/im-anuvaad/binboat/internal/backup"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/hostinfo"
+	"github.com/im-anuvaad/binboat/internal/metrics"
+	"github.com/im-anuvaad/binboat/internal/supervisor"
 )
 
 // APIVersion is the path prefix version of the status API.

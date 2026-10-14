@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/logs"
+	"github.com/im-anuvaad/binboat/internal/logs"
 )
 
 // KeepPreRestore is how many .pre-restore-* folders are kept per app.

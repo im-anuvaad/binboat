@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 // TestSetupAddress runs the real listener on loopback. 127.0.0.1 is not a

@@ -11,13 +11,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sumitwaani2/binboat/contrib/systemd"
-	"github.com/sumitwaani2/binboat/internal/auth"
-	"github.com/sumitwaani2/binboat/internal/buildinfo"
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/contrib/systemd"
+	"github.com/im-anuvaad/binboat/internal/auth"
+	"github.com/im-anuvaad/binboat/internal/buildinfo"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 // runSetupHost is the second half of install.sh (docs/architecture.md):

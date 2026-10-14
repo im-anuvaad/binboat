@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 func openStore(t *testing.T) *store.Store {
