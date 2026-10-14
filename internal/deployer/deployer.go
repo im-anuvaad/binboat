@@ -23,16 +23,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/app"
-	"github.com/sumitwaani2/binboat/internal/artifact"
-	"github.com/sumitwaani2/binboat/internal/github"
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/logs"
-	"github.com/sumitwaani2/binboat/internal/manifest"
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
-	"github.com/sumitwaani2/binboat/internal/supervisor"
-	"github.com/sumitwaani2/binboat/internal/users"
+	"github.com/im-anuvaad/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/artifact"
+	"github.com/im-anuvaad/binboat/internal/github"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/logs"
+	"github.com/im-anuvaad/binboat/internal/manifest"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/supervisor"
+	"github.com/im-anuvaad/binboat/internal/users"
 )
 
 // Retention.
@@ -68,7 +68,7 @@ var tagRe = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$`)
 // name and as BINBOAT_RELEASE.
 func ValidateTag(tag string) error {
 	if !tagRe.MatchString(tag) || strings.Contains(tag, "..") {
-		return fmt.Errorf("release tag %q is not supported: use letters, digits, '.', '_' and '-' (e.g. v1.4.0)", tag)
+		return fmt.Errorf("release tag %q is not supported: use letters, digits, '.', '_' and '-' (e.g. v1.0.0)", tag)
 	}
 	return nil
 }

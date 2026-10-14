@@ -19,9 +19,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/cloudflare"
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/cloudflare"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 // Settings keys.

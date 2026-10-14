@@ -9,15 +9,16 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"syscall"
 	"time"
 
-	"github.com/sumitwaani2/binboat/contrib/systemd"
-	"github.com/sumitwaani2/binboat/internal/auth"
-	"github.com/sumitwaani2/binboat/internal/buildinfo"
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/contrib/systemd"
+	"github.com/im-anuvaad/binboat/internal/auth"
+	"github.com/im-anuvaad/binboat/internal/buildinfo"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
 )
 
 // runSetupHost is the second half of install.sh (docs/architecture.md):
@@ -38,6 +39,12 @@ func setupHost(out io.Writer) error {
 	}
 	if serviceActive() {
 		return errors.New("binboat is running; stop it first (systemctl stop binboat)")
+	}
+	// binboat is stopped, so anything on 443 is another program: binboat
+	// could not start, and that program would answer the readiness check
+	// below in its place. Fail before changing anything.
+	if err := portFree(":443"); err != nil {
+		return err
 	}
 	lay := layout.Default()
 	if err := layout.EnsureBase(lay); err != nil {
@@ -94,10 +101,10 @@ func setupHost(out io.Writer) error {
 		ip = "<this server's IP address>"
 	}
 
-	fmt.Fprintf(out, "\nbinboat %s is running.\n\n", buildinfo.Version)
-	if !ready {
-		fmt.Fprintln(out, "  Warning: binboat is not answering on port 443 yet; see: journalctl -u binboat")
-		fmt.Fprintln(out)
+	if ready {
+		fmt.Fprintf(out, "\nbinboat %s is running.\n\n", buildinfo.Version)
+	} else {
+		fmt.Fprintf(out, "\nbinboat %s was started but is not answering on port 443 yet; see: journalctl -u binboat\n\n", buildinfo.Version)
 	}
 	fmt.Fprintf(out, "  Open:              https://%s\n", ip)
 	fmt.Fprintf(out, "                     Your browser warns that the certificate is not trusted: expected here, continue.\n")
@@ -109,6 +116,27 @@ func setupHost(out io.Writer) error {
 	}
 	fmt.Fprintln(out)
 	return nil
+}
+
+// portFree reports another program listening on addr, naming it if ss can.
+func portFree(addr string) error {
+	l, err := net.Listen("tcp", addr)
+	if err == nil {
+		return l.Close()
+	}
+	if !errors.Is(err, syscall.EADDRINUSE) {
+		return fmt.Errorf("cannot listen on %s: %w", addr, err)
+	}
+	who := "another program"
+	if out, err := exec.Command("ss", "-Hltnp", "sport = "+addr).Output(); err == nil {
+		if _, rest, ok := strings.Cut(string(out), `(("`); ok {
+			if name, _, ok := strings.Cut(rest, `"`); ok && name != "" {
+				who = name
+			}
+		}
+	}
+	return fmt.Errorf("port %s is already in use by %s; binboat serves HTTPS itself and needs it.\n"+
+		"Stop and disable that program (e.g. systemctl disable --now %s), then run the install command again", strings.TrimPrefix(addr, ":"), who, who)
 }
 
 func waitListening(addr string, max time.Duration) bool {

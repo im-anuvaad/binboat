@@ -12,7 +12,7 @@ import (
 
 	"github.com/BurntSushi/toml"
 
-	"github.com/sumitwaani2/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/app"
 )
 
 // FileName is the manifest file name at the app root.

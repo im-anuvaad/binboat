@@ -15,14 +15,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/app"
-	"github.com/sumitwaani2/binboat/internal/deployer"
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/github"
-	"github.com/sumitwaani2/binboat/internal/secrets"
-	"github.com/sumitwaani2/binboat/internal/store"
-	"github.com/sumitwaani2/binboat/internal/supervisor"
-	"github.com/sumitwaani2/binboat/internal/users"
+	"github.com/im-anuvaad/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/deployer"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/github"
+	"github.com/im-anuvaad/binboat/internal/secrets"
+	"github.com/im-anuvaad/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/supervisor"
+	"github.com/im-anuvaad/binboat/internal/users"
 )
 
 // Port range for app listeners.

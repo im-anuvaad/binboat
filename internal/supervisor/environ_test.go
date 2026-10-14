@@ -4,8 +4,8 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/sumitwaani2/binboat/internal/app"
-	"github.com/sumitwaani2/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/layout"
 )
 
 func TestEnvironGoMemLimit(t *testing.T) {

@@ -1,5 +1,5 @@
 // Package buildinfo exposes version metadata injected at build time via
-// -ldflags "-X github.com/sumitwaani2/binboat/internal/buildinfo.Version=...".
+// -ldflags "-X github.com/im-anuvaad/binboat/internal/buildinfo.Version=...".
 package buildinfo
 
 import (

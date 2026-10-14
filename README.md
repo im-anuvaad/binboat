@@ -1,11 +1,17 @@
-# binboat
+<p align="center"><img src="docs/assets/logo.svg" alt="binboat logo" width="96" height="96"></p>
+
+<h1 align="center">binboat</h1>
+
+<p align="center"><a href="https://binboat.pages.dev">Documentation</a> · <a href="https://github.com/im-anuvaad/binboat/releases/latest">Latest release</a></p>
 
 A tiny, self-contained PaaS for hosting small server-rendered web apps (**Go, Zig or C** + SQLite) on a single VPS behind Cloudflare.
 
 One binary. No Docker, no extra reverse proxy. SSH in once and run one command; it prints a one-time password, and everything else happens in a web dashboard.
 
 ```
-Cloudflare (proxied, Full strict) ──HTTPS──► binboat (TLS + routing + dashboard + deploys + backups) ──► your apps on 127.0.0.1
+Cloudflare (proxied, Full strict) ──HTTPS──► binboat ──► your apps on 127.0.0.1
+                                             TLS, routing, dashboard,
+                                             deploys, backups
 ```
 
 - **Deploy GitHub releases with a click.** Each app's own GitHub Actions workflow tests and builds it when you push a tag; binboat lists the releases and **Deploy** downloads, verifies and runs the one you pick. The server never compiles anything. Rollback is one click too.
@@ -16,6 +22,8 @@ Cloudflare (proxied, Full strict) ──HTTPS──► binboat (TLS + routing + 
 - **Read-only status API** for scripts and AI agents ("is my blog up?"), with one rotatable token: [docs/api.md](docs/api.md).
 
 Scope: 1 server (Ubuntu 24.04+, 1 GB RAM is enough), 1 user, about 5 apps. Status: **v1.0.0**.
+
+![The binboat dashboard: an app's status, the Deploy menu with its GitHub releases, and CPU, memory, request and response-time charts](docs/assets/dashboard.png)
 
 ## Before you start
 
@@ -35,7 +43,7 @@ Scope: 1 server (Ubuntu 24.04+, 1 GB RAM is enough), 1 user, about 5 apps. Statu
 ## Install
 
 ```bash
-curl -fsSL https://github.com/sumitwaani2/binboat/releases/latest/download/install.sh | sudo bash
+curl -fsSL https://github.com/im-anuvaad/binboat/releases/latest/download/install.sh | sudo bash
 ```
 
 It asks nothing, takes a few seconds and ends with the address to open (`https://<server IP>`) and a **one-time password**. You can close SSH now.
@@ -74,6 +82,7 @@ Run the install command again. It installs the latest binboat, keeps all apps an
 | Cloudflare error 525 / 520 | Origin pulls were changed in Cloudflare; binboat repairs them on the next sync (**Sync now**) and waits a few minutes before requiring them again |
 | `has a CNAME record` | Delete the CNAME in Cloudflare; binboat creates the A record |
 | Nothing answers at all | Re-run the install command and use the address and one-time password it prints |
+| Install stops with `port 443 is already in use by …` | Another web server (nginx, Caddy, Apache, another panel) holds port 443; binboat serves HTTPS itself. Stop and disable it, then run the install command again |
 
 ## License and maintenance
 

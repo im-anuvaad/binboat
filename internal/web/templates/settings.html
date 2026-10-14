@@ -14,7 +14,7 @@
     {{template "csrf" $csrf}}
     <label class="wide">{{if .TokenSet}}Replace API token{{else}}API token{{end}}
       <input type="password" name="token" autocomplete="off" required>
-      <small>Permissions: Zone Read, DNS Edit, SSL and Certificates Edit, Zone Settings Edit (<a href="https://github.com/sumitwaani2/binboat#before-you-start" target="_blank" rel="noopener">how to create it</a>).</small></label>
+      <small>Permissions: Zone Read, DNS Edit, SSL and Certificates Edit, Zone Settings Edit (<a href="https://github.com/im-anuvaad/binboat#before-you-start" target="_blank" rel="noopener">how to create it</a>).</small></label>
     <div class="wide buttons"><button>Verify and save</button></div>
   </form>
   {{with .LastError}}<p class="error pre">{{.}}</p>{{end}}

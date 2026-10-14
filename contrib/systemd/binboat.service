@@ -1,6 +1,6 @@
 [Unit]
 Description=binboat - minimal PaaS for small SQLite apps (Go, Zig or C)
-Documentation=https://github.com/sumitwaani2/binboat
+Documentation=https://github.com/im-anuvaad/binboat
 After=network-online.target
 Wants=network-online.target
 # Never give up restarting; the delay grows to at most 60s.

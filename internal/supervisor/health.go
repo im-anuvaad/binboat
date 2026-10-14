@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/app"
+	"github.com/im-anuvaad/binboat/internal/app"
 )
 
 // healthCheck waits until the app accepts TCP connections on its port and

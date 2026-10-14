@@ -20,15 +20,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/apps"
-	"github.com/sumitwaani2/binboat/internal/auth"
-	"github.com/sumitwaani2/binboat/internal/backup"
-	"github.com/sumitwaani2/binboat/internal/deployer"
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/layout"
-	"github.com/sumitwaani2/binboat/internal/metrics"
-	"github.com/sumitwaani2/binboat/internal/store"
-	"github.com/sumitwaani2/binboat/internal/supervisor"
+	"github.com/im-anuvaad/binboat/internal/apps"
+	"github.com/im-anuvaad/binboat/internal/auth"
+	"github.com/im-anuvaad/binboat/internal/backup"
+	"github.com/im-anuvaad/binboat/internal/deployer"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/layout"
+	"github.com/im-anuvaad/binboat/internal/metrics"
+	"github.com/im-anuvaad/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/supervisor"
 )
 
 //go:embed templates/*.html

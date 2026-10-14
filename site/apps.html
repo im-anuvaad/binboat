@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hosting an app · binboat</title>
 <meta name="description" content="The binboat app contract: what a Go, Zig or C app needs to be deployed with one click.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html">binboat</a>
-  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="apps.html" aria-current="page">Hosting an app</a><a href="api.html">Status API</a><a href="internals.html">How it works</a><a href="https://github.com/sumitwaani2/binboat" rel="noopener">GitHub</a></nav>
+  <a class="brand" href="index.html"><img src="logo.svg" alt="" width="26" height="26">binboat</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="apps.html" aria-current="page">Hosting an app</a><a href="api.html">Status API</a><a href="internals.html">How it works</a><a href="https://github.com/im-anuvaad/binboat" rel="noopener">GitHub</a></nav>
 </header>
 <main>
 <h1 id="binboat-app-contract">binboat App Contract</h1>
@@ -218,7 +219,7 @@ jobs:
 </code></pre>
 <p>The workflow runs <code>TEST</code>, builds both architectures, packages <code>app-linux-amd64.tar.gz</code> and <code>app-linux-arm64.tar.gz</code>, writes <code>checksums.txt</code>, starts the amd64 package exactly as binboat would and waits for <code>health_path</code>, and only then publishes the release. Nothing is deployed yet: the release appears in the app's <strong>Deploy</strong> menu in binboat, and you pick when.</p>
 <ul>
-<li>Tags must match <code>v*</code> and use only letters, digits, <code>.</code>, <code>_</code> and <code>-</code> (e.g. <code>v1.4.0</code>, <code>v1.4.0-rc1</code>); the tag becomes <code>BINBOAT_RELEASE</code>.</li>
+<li>Tags must match <code>v*</code> and use only letters, digits, <code>.</code>, <code>_</code> and <code>-</code> (e.g. <code>v1.0.0</code>, <code>v1.0.0-rc1</code>); the tag becomes <code>BINBOAT_RELEASE</code>.</li>
 <li>Push the workflow file in a commit <strong>before</strong> the first tag: a tag pushed together with the repository's first commit does not start the workflow.</li>
 <li>Builds run on GitHub's runners, never on your server. Private repos work: binboat downloads assets with the GitHub token from its settings (<em>Contents: Read-only</em>).</li>
 <li>The tarball is unpacked read-only (owned by root). Anything the app writes goes in <code>$DATA_DIR</code> or <code>$TMPDIR</code>.</li>
@@ -389,7 +390,7 @@ jobs:
 </tr>
 <tr>
 <td><code>BINBOAT_RELEASE</code></td>
-<td><code>v1.4.0</code></td>
+<td><code>v1.0.0</code></td>
 <td>The deployed release (its tag).</td>
 </tr>
 <tr>
@@ -598,6 +599,6 @@ func main() {
 └── static/
 </code></pre>
 <p>A Go app has <code>go.mod</code>, <code>main.go</code>, <code>binboat.toml</code> and the workflow from §2.4 instead of the Zig or C build files; <code>run</code> is just the binary name.</p></main>
-<footer>binboat is licensed under <a href="https://github.com/sumitwaani2/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/sumitwaani2/binboat" rel="noopener">Source on GitHub</a></footer>
+<footer>binboat is licensed under <a href="https://github.com/im-anuvaad/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/im-anuvaad/binboat" rel="noopener">Source on GitHub</a></footer>
 </body>
 </html>

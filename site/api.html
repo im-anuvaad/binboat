@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Status API · binboat</title>
 <meta name="description" content="binboat&#x27;s read-only status API for scripts and AI agents.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html">binboat</a>
-  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="apps.html">Hosting an app</a><a href="api.html" aria-current="page">Status API</a><a href="internals.html">How it works</a><a href="https://github.com/sumitwaani2/binboat" rel="noopener">GitHub</a></nav>
+  <a class="brand" href="index.html"><img src="logo.svg" alt="" width="26" height="26">binboat</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="apps.html">Hosting an app</a><a href="api.html" aria-current="page">Status API</a><a href="internals.html">How it works</a><a href="https://github.com/im-anuvaad/binboat" rel="noopener">GitHub</a></nav>
 </header>
 <main>
 <h1 id="binboat-status-api">binboat Status API</h1>
@@ -59,7 +60,7 @@
 <h3 id="get-apiv1status"><code>GET /api/v1/status</code></h3>
 <pre><code class="language-json">{
   &quot;ok&quot;: false,
-  &quot;binboat_version&quot;: &quot;v1.1.0&quot;,
+  &quot;binboat_version&quot;: &quot;v1.0.0&quot;,
   &quot;time&quot;: &quot;2026-10-12T17:06:27Z&quot;,
   &quot;host&quot;: {
     &quot;hostname&quot;: &quot;vps-1&quot;,
@@ -84,7 +85,7 @@
       &quot;healthy&quot;: true,
       &quot;domain&quot;: &quot;blog.example.com&quot;,
       &quot;url&quot;: &quot;https://blog.example.com/&quot;,
-      &quot;release&quot;: &quot;v1.4.0&quot;,
+      &quot;release&quot;: &quot;v1.0.0&quot;,
       &quot;deploying&quot;: false,
       &quot;needs_restart&quot;: false,
       &quot;memory_bytes&quot;: 31457280,
@@ -177,12 +178,12 @@
     &quot;disk_write_bytes_per_second&quot;: 0
   },
   &quot;last_deployment&quot;: {
-    &quot;id&quot;: 12, &quot;kind&quot;: &quot;deploy&quot;, &quot;status&quot;: &quot;succeeded&quot;, &quot;release&quot;: &quot;v2.0.1&quot;,
+    &quot;id&quot;: 12, &quot;kind&quot;: &quot;deploy&quot;, &quot;status&quot;: &quot;succeeded&quot;, &quot;release&quot;: &quot;v1.0.0&quot;,
     &quot;started_at&quot;: &quot;2026-10-11T09:12:00Z&quot;, &quot;finished_at&quot;: &quot;2026-10-11T09:12:04Z&quot;, &quot;error&quot;: &quot;&quot;
   },
   &quot;last_backup&quot;: {
     &quot;id&quot;: 88, &quot;kind&quot;: &quot;scheduled&quot;, &quot;status&quot;: &quot;ok&quot;, &quot;created_at&quot;: &quot;2026-10-12T15:00:04Z&quot;,
-    &quot;size_bytes&quot;: 482133, &quot;in_bucket&quot;: true, &quot;on_server&quot;: true, &quot;release&quot;: &quot;v2.0.1&quot;, &quot;error&quot;: &quot;&quot;
+    &quot;size_bytes&quot;: 482133, &quot;in_bucket&quot;: true, &quot;on_server&quot;: true, &quot;release&quot;: &quot;v1.0.0&quot;, &quot;error&quot;: &quot;&quot;
   },
   &quot;domain_status&quot;: { &quot;dns&quot;: &quot;ok&quot;, &quot;certificate_valid_until&quot;: &quot;2041-10-01T00:00:00Z&quot;, &quot;error&quot;: &quot;&quot; },
   &quot;warnings&quot;: [&quot;crashed and not being restarted: exit status 1&quot;]
@@ -208,6 +209,6 @@
 <li>"Is the server running out of memory or disk?" → <code>host</code> in <code>/status</code>.</li>
 </ul>
 <p>The agent can't fix anything through the API; it can tell you what to do in the dashboard.</p></main>
-<footer>binboat is licensed under <a href="https://github.com/sumitwaani2/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/sumitwaani2/binboat" rel="noopener">Source on GitHub</a></footer>
+<footer>binboat is licensed under <a href="https://github.com/im-anuvaad/binboat/blob/main/LICENSE" rel="noopener">Apache 2.0</a> · <a href="https://github.com/im-anuvaad/binboat" rel="noopener">Source on GitHub</a></footer>
 </body>
 </html>

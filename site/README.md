@@ -13,7 +13,7 @@ Connect the repository in the Cloudflare dashboard (**Workers & Pages → Create
 | Build command | *(empty)* |
 | Build output directory | `site` |
 
-`_headers` sets the security headers (strict CSP: the pages load only `style.css`). `404.html` is served for unknown paths.
+`_headers` sets the security headers (strict CSP: the pages load only `style.css` and the images next to it). `logo.svg` and `dashboard.png` are copies of the files in `docs/assets/`; update both together. `404.html` is served for unknown paths.
 
 ## Editing
 

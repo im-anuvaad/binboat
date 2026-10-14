@@ -1,4 +1,4 @@
-module github.com/sumitwaani2/binboat
+module github.com/im-anuvaad/binboat
 
 go 1.27.1
 

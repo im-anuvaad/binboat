@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/sumitwaani2/binboat/internal/s3"
+	"github.com/im-anuvaad/binboat/internal/s3"
 )
 
 // Folders lists the backup folders in the bucket (one per app name), for

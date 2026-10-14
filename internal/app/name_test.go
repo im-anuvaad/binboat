@@ -3,7 +3,7 @@ package app
 import (
 	"testing"
 
-	"github.com/sumitwaani2/binboat/internal/github"
+	"github.com/im-anuvaad/binboat/internal/github"
 )
 
 func TestNameFromRepo(t *testing.T) {

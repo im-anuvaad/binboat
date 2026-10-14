@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/sumitwaani2/binboat/internal/supervisor"
+	"github.com/im-anuvaad/binboat/internal/supervisor"
 )
 
 // ErrBusy is returned while a deployment of the app is queued or running.

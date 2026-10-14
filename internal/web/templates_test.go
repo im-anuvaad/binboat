@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/apps"
-	"github.com/sumitwaani2/binboat/internal/deployer"
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/github"
-	"github.com/sumitwaani2/binboat/internal/hostinfo"
+	"github.com/im-anuvaad/binboat/internal/apps"
+	"github.com/im-anuvaad/binboat/internal/deployer"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/github"
+	"github.com/im-anuvaad/binboat/internal/hostinfo"
 )
 
 // Templates are only checked when executed, so render the main pages with

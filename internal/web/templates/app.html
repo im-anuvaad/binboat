@@ -45,7 +45,7 @@
   <p class="muted">The 10 newest GitHub releases of {{$.Data.App.Repo}}. The chosen release is downloaded, checked against its checksums.txt and started; if it doesn't become healthy, the current one keeps running.</p>
   {{else}}
   {{with $.Data.GitHubErr}}<p class="error">Could not list the releases: {{.}}</p>{{else}}
-  <p class="muted">The repository has no releases yet. Add the release workflow (<a href="https://github.com/sumitwaani2/binboat/blob/main/docs/app-contract.md#22-the-release-workflow" target="_blank" rel="noopener">app contract §2</a>) and push a tag: <code>git tag v1.0.0 &amp;&amp; git push origin v1.0.0</code>. The release shows up here a few minutes later.</p>{{end}}
+  <p class="muted">The repository has no releases yet. Add the release workflow (<a href="https://github.com/im-anuvaad/binboat/blob/main/docs/app-contract.md#22-the-release-workflow" target="_blank" rel="noopener">app contract §2</a>) and push a tag: <code>git tag v1.0.0 &amp;&amp; git push origin v1.0.0</code>. The release shows up here a few minutes later.</p>{{end}}
   {{end}}
 </section>
 

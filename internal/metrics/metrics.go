@@ -16,10 +16,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sumitwaani2/binboat/internal/edge"
-	"github.com/sumitwaani2/binboat/internal/hostinfo"
-	"github.com/sumitwaani2/binboat/internal/store"
-	"github.com/sumitwaani2/binboat/internal/supervisor"
+	"github.com/im-anuvaad/binboat/internal/edge"
+	"github.com/im-anuvaad/binboat/internal/hostinfo"
+	"github.com/im-anuvaad/binboat/internal/store"
+	"github.com/im-anuvaad/binboat/internal/supervisor"
 )
 
 // Scopes other than app names.
