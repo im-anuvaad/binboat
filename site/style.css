@@ -53,8 +53,6 @@ ul.checklist li::before{content:"";position:absolute;left:2px;top:.35em;width:14
   .toc ul{columns:1}
   th,td{padding:6px 8px}
   table{font-size:14px}
-  /* Long identifiers in table cells may break so tables fit or nearly fit. */
-  td code{overflow-wrap:anywhere}
   pre{padding:12px}
   pre code{font-size:12.5px}
   /* One-line shell commands wrap instead of scrolling: all of it stays
